@@ -1,24 +1,14 @@
 {
   "name": "The Nest",
   "short_name": "The Nest",
-  "description": "Your family's daily moment",
-  "start_url": "/",
+  "description": "A warm little corner for your family",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#0f0720",
-  "theme_color": "#1a0a2e",
+  "background_color": "#2d1b0e",
+  "theme_color": "#2d1b0e",
   "orientation": "portrait",
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }

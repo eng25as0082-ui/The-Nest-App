@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2d1b0e">
+  <link rel="manifest" href="manifest.json">
+  <title>Prompts · The Nest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/prompts.css">
+</head>
+<body>
+  <div class="app-page">
+
+    <header class="top-bar">
+      <div class="page-title">Prompt Library</div>
+      <button class="dice-btn" id="diceBtn">🎲 Surprise me</button>
+    </header>
+
+    <main class="scroll-body">
+      <p class="page-hint">Tap any prompt to use it as today's question</p>
+      <div class="filter-row">
+        <button class="filter-chip active" data-cat="all">All</button>
+        <button class="filter-chip" data-cat="fun">Fun</button>
+        <button class="filter-chip" data-cat="deep">Deep</button>
+        <button class="filter-chip" data-cat="memory">Memory</button>
+        <button class="filter-chip" data-cat="silly">Silly</button>
+      </div>
+      <div id="promptGrid"></div>
+    </main>
+
+    <nav class="tab-bar">
+      <a href="home.html" class="tab"><span class="ti">🏡</span><span class="tl">Home</span></a>
+      <a href="prompts.html" class="tab active"><span class="ti">💬</span><span class="tl">Prompts</span></a>
+      <a href="memory.html" class="tab"><span class="ti">📖</span><span class="tl">Memory</span></a>
+      <a href="family.html" class="tab"><span class="ti">👨‍👩‍👧‍👦</span><span class="tl">Family</span></a>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/state.js"></script>
+  <script src="js/prompts.js"></script>
+</body>
+</html>

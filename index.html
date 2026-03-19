@@ -6,145 +6,40 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="The Nest">
-  <meta name="theme-color" content="#0f0720">
+  <meta name="theme-color" content="#2d1b0e">
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <title>The Nest 🪺</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+  <div class="login-page">
 
-<!-- LOGIN -->
-<div id="screen-login" class="screen active">
-  <div class="login-bg">
-    <div class="star s1"></div><div class="star s2"></div><div class="star s3"></div>
-    <div class="star s4"></div><div class="star s5"></div><div class="star s6"></div>
-    <div class="star s7"></div><div class="star s8"></div>
-  </div>
-  <div class="login-content">
-    <div class="nest-logo-big">🪺</div>
-    <h1 class="app-title">The Nest</h1>
-    <p class="app-tagline">Your family's daily moment</p>
-    <div class="login-card">
-      <p class="login-label">Who are you today?</p>
-      <div class="member-select" id="member-select-list"></div>
-      <p class="login-hint">Tap your name to enter the nest</p>
+    <div class="fireflies">
+      <span class="ff ff1"></span><span class="ff ff2"></span><span class="ff ff3"></span>
+      <span class="ff ff4"></span><span class="ff ff5"></span><span class="ff ff6"></span>
+      <span class="ff ff7"></span><span class="ff ff8"></span>
     </div>
-  </div>
-</div>
 
-<!-- HOME -->
-<div id="screen-home" class="screen">
-  <div class="top-bar">
-    <div class="top-left">
-      <span class="user-avatar" id="home-avatar"></span>
-      <span class="user-name" id="home-name"></span>
-    </div>
-    <div class="top-right">
-      <span class="streak-pill" id="streak-display">🔥 0</span>
-    </div>
-  </div>
-  <div class="scroll-area">
-    <div class="date-label" id="today-date"></div>
-    <div class="prompt-card">
-      <div class="prompt-tag">Today's prompt</div>
-      <div class="prompt-text" id="prompt-text">Loading…</div>
-      <div class="answered-row" id="answered-row"></div>
-    </div>
-    <div class="answer-section" id="answer-section">
-      <textarea class="answer-input" id="answer-input" placeholder="Share your answer with the family…" maxlength="280" rows="3"></textarea>
-      <div class="char-count"><span id="char-count">0</span>/280</div>
-      <button class="submit-btn" id="submit-btn">Share with family ✦</button>
-    </div>
-    <div class="already-answered hidden" id="already-answered">
-      <span class="check-icon">✓</span>
-      <span>You've answered today — check the feed below!</span>
-    </div>
-    <div class="feed-title">Family's answers</div>
-    <div id="feed-list"></div>
-    <div class="empty-feed hidden" id="empty-feed">
-      <div class="empty-icon">🌙</div>
-      <p>No answers yet today.<br>Be the first to share!</p>
-    </div>
-  </div>
-  <nav class="bottom-nav">
-    <button class="nav-btn active" data-screen="home"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></button>
-    <button class="nav-btn" data-screen="prompts"><span class="nav-icon">💬</span><span class="nav-label">Prompts</span></button>
-    <button class="nav-btn" data-screen="memory"><span class="nav-icon">📖</span><span class="nav-label">Memory</span></button>
-    <button class="nav-btn" data-screen="family"><span class="nav-icon">👨‍👩‍👧‍👦</span><span class="nav-label">Family</span></button>
-  </nav>
-</div>
-
-<!-- PROMPTS -->
-<div id="screen-prompts" class="screen">
-  <div class="top-bar">
-    <div class="top-left"><span class="screen-title">Prompt Library</span></div>
-    <div class="top-right"><button class="icon-btn" id="random-prompt-btn">🎲 Random</button></div>
-  </div>
-  <div class="scroll-area">
-    <p class="section-hint">Tap a prompt to set it as today's question</p>
-    <div id="prompt-library-list"></div>
-  </div>
-  <nav class="bottom-nav">
-    <button class="nav-btn" data-screen="home"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></button>
-    <button class="nav-btn active" data-screen="prompts"><span class="nav-icon">💬</span><span class="nav-label">Prompts</span></button>
-    <button class="nav-btn" data-screen="memory"><span class="nav-icon">📖</span><span class="nav-label">Memory</span></button>
-    <button class="nav-btn" data-screen="family"><span class="nav-icon">👨‍👩‍👧‍👦</span><span class="nav-label">Family</span></button>
-  </nav>
-</div>
-
-<!-- MEMORY -->
-<div id="screen-memory" class="screen">
-  <div class="top-bar">
-    <div class="top-left"><span class="screen-title">Memory Lane</span></div>
-  </div>
-  <div class="scroll-area">
-    <p class="section-hint">Every moment your family has shared</p>
-    <div id="memory-list"></div>
-    <div class="empty-feed hidden" id="empty-memory">
-      <div class="empty-icon">🌱</div>
-      <p>Your family's story starts here.<br>Answer today's prompt!</p>
-    </div>
-  </div>
-  <nav class="bottom-nav">
-    <button class="nav-btn" data-screen="home"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></button>
-    <button class="nav-btn" data-screen="prompts"><span class="nav-icon">💬</span><span class="nav-label">Prompts</span></button>
-    <button class="nav-btn active" data-screen="memory"><span class="nav-icon">📖</span><span class="nav-label">Memory</span></button>
-    <button class="nav-btn" data-screen="family"><span class="nav-icon">👨‍👩‍👧‍👦</span><span class="nav-label">Family</span></button>
-  </nav>
-</div>
-
-<!-- FAMILY -->
-<div id="screen-family" class="screen">
-  <div class="top-bar">
-    <div class="top-left"><span class="screen-title">The Family</span></div>
-    <div class="top-right"><button class="icon-btn danger" id="logout-btn">Leave nest</button></div>
-  </div>
-  <div class="scroll-area">
-    <div class="family-header">
-      <div class="family-nest-icon">🪺</div>
-      <div class="family-stats">
-        <div class="stat-pill"><span id="stat-days">0</span> days together</div>
-        <div class="stat-pill"><span id="stat-answers">0</span> answers shared</div>
+    <div class="login-wrap">
+      <div class="brand">
+        <div class="nest-glyph">🪺</div>
+        <h1>The Nest</h1>
+        <p class="tagline">A warm little corner for your family</p>
       </div>
-    </div>
-    <div id="family-members-list"></div>
-    <div class="reset-section">
-      <button class="reset-btn" id="reset-btn">Reset all data</button>
-      <p class="reset-hint">Clears everything and starts fresh</p>
+
+      <div class="login-card">
+        <p class="who-label">Who's home today?</p>
+        <div class="member-list" id="memberList"></div>
+      </div>
+
+      <p class="footer-note">Your private family space · No accounts needed</p>
     </div>
   </div>
-  <nav class="bottom-nav">
-    <button class="nav-btn" data-screen="home"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></button>
-    <button class="nav-btn" data-screen="prompts"><span class="nav-icon">💬</span><span class="nav-label">Prompts</span></button>
-    <button class="nav-btn" data-screen="memory"><span class="nav-icon">📖</span><span class="nav-label">Memory</span></button>
-    <button class="nav-btn active" data-screen="family"><span class="nav-icon">👨‍👩‍👧‍👦</span><span class="nav-label">Family</span></button>
-  </nav>
-</div>
 
-<div id="toast" class="toast"></div>
-<script src="js/app.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>

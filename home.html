@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2d1b0e">
+  <link rel="manifest" href="manifest.json">
+  <title>Home · The Nest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <div class="app-page">
+
+    <header class="top-bar">
+      <div class="user-chip" id="userChip"></div>
+      <div class="header-right">
+        <span class="streak-badge" id="streakBadge">🔥 0</span>
+      </div>
+    </header>
+
+    <main class="scroll-body">
+      <div class="date-row" id="dateRow"></div>
+
+      <!-- Prompt Card -->
+      <div class="prompt-card" id="promptCard">
+        <div class="prompt-eyebrow">Today's question</div>
+        <div class="prompt-q" id="promptQ">Loading…</div>
+        <div class="who-answered" id="whoAnswered"></div>
+      </div>
+
+      <!-- Answer form -->
+      <div class="answer-block" id="answerBlock">
+        <textarea id="answerInput" class="answer-textarea" placeholder="Type your answer here…" maxlength="300" rows="3"></textarea>
+        <div class="textarea-footer">
+          <span class="char-left" id="charLeft">300 left</span>
+          <button class="post-btn" id="postBtn">Share ✦</button>
+        </div>
+      </div>
+
+      <!-- Already answered banner -->
+      <div class="done-banner hidden" id="doneBanner">
+        <span class="done-icon">🌿</span>
+        <span>You've shared today! See the feed below.</span>
+      </div>
+
+      <!-- Feed -->
+      <div class="section-head">Family's answers</div>
+      <div id="feedList"></div>
+      <div class="empty-state hidden" id="emptyFeed">
+        <div class="empty-art">🌙</div>
+        <p>The nest is quiet…<br>be the first to answer!</p>
+      </div>
+    </main>
+
+    <nav class="tab-bar">
+      <a href="home.html" class="tab active"><span class="ti">🏡</span><span class="tl">Home</span></a>
+      <a href="prompts.html" class="tab"><span class="ti">💬</span><span class="tl">Prompts</span></a>
+      <a href="memory.html" class="tab"><span class="ti">📖</span><span class="tl">Memory</span></a>
+      <a href="family.html" class="tab"><span class="ti">👨‍👩‍👧‍👦</span><span class="tl">Family</span></a>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/state.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
